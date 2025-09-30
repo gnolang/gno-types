@@ -1,0 +1,61 @@
+{
+  "name": "@gnolang/gno-types",
+  "version": "1.0.0",
+  "description": "JS and TS types relating to Protocol Buffers used by AtomOne",
+  "contributors": [
+    "Simon Warta <webmaster128@users.noreply.github.com>",
+    "Will Clark <willclarktech@users.noreply.github.com>",
+    "Dan Lynch <pyramation@gmail.com>",
+    "Alex M.<alex.megalokonomos@tendermint.com>"
+  ],
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && tsc --noEmit && tsdown",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "codegen": "rimraf ./src && ./scripts/generate.sh && ./scripts/addIndices.js && pnpm run lint:fix"
+  },
+  "peerDependencies": {  
+    "@bufbuild/protobuf": "^2.9.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/core": "^0.18.2",
+    "@bufbuild/protobuf": "^2.9.0",
+    "@cosmjs/amino": "^0.36.0",
+    "@cosmjs/proto-signing": "^0.36.0",
+    "@cosmjs/stargate": "^0.36.0",
+    "@cosmjs/tendermint-rpc": "^0.36.0",
+    "@eslint/js": "^9.36.0",
+    "@stylistic/eslint-plugin": "^5.4.0",
+    "@types/node": "^24.6.0",
+    "eslint": "^9.36.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "rimraf": "^6.0.1",
+    "ts-proto": "^2.7.7",
+    "tsdown": "^0.15.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.45.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1"
+}
