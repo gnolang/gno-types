@@ -1,12 +1,10 @@
 {
   "name": "@gnolang/gno-types",
   "version": "1.0.0",
-  "description": "JS and TS types relating to Protocol Buffers used by AtomOne",
+  "description": "JS and TS types relating to proto-compatible amino encoding used by gno",
   "contributors": [
-    "Simon Warta <webmaster128@users.noreply.github.com>",
-    "Will Clark <willclarktech@users.noreply.github.com>",
-    "Dan Lynch <pyramation@gmail.com>",
-    "Alex M.<alex.megalokonomos@tendermint.com>"
+    "Alex M.<alex.megalokonomos@tendermint.com>",
+    "Milos Zivkovic <milos.zivkovic@tendermint.com>"
   ],
   "type": "module",
   "publishConfig": {
@@ -55,7 +53,8 @@
     "typescript-eslint": "^8.45.0"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alex M.<alex.megalokonomos@tendermint.com>",
+  "license": "Apache-2.0",
+  "homepage": "https://gno.land/",
   "packageManager": "pnpm@10.17.1"
 }
