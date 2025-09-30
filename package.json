@@ -1,6 +1,6 @@
 {
   "name": "@gnolang/gno-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JS and TS types relating to proto-compatible amino encoding used by gno",
   "contributors": [
     "Alex M.<alex.megalokonomos@tendermint.com>",
@@ -37,10 +37,6 @@
   "devDependencies": {
     "@arethetypeswrong/core": "^0.18.2",
     "@bufbuild/protobuf": "^2.9.0",
-    "@cosmjs/amino": "^0.36.0",
-    "@cosmjs/proto-signing": "^0.36.0",
-    "@cosmjs/stargate": "^0.36.0",
-    "@cosmjs/tendermint-rpc": "^0.36.0",
     "@eslint/js": "^9.36.0",
     "@stylistic/eslint-plugin": "^5.4.0",
     "@types/node": "^24.6.0",

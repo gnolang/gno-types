@@ -1,1 +1,0 @@
-import { MsgAddPackage } from "./index.js";

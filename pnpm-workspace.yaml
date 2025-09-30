@@ -1,3 +1,0 @@
-onlyBuiltDependencies:
-  - '@cosmology/protobufjs'
-  - es5-ext
