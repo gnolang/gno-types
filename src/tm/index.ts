@@ -1,5 +1,5 @@
 // Auto-generated, see scripts/codegen.js!
 
-// Exports we want to provide at the root of the "cosmjs-types" package
+// Exports we want to provide at the root of the "@gnolang/gno-types" package
 
-export * from "./multisig.js";
+export * as multisig from "./multisig.js";

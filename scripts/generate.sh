@@ -3,7 +3,11 @@
 PROTO_PATH=./protos
 OUT_DIR=./src
 
-FILES=$(find protos -type f -name "*.proto")
+# Only the packages we publish are generated; ts-proto also emits every proto
+# they import (gogoproto, cosmos, google, ...), so dependencies need no listing.
+ROOTS="gno ibc tendermint tm"
+
+FILES=$(for root in ${ROOTS}; do find protos/${root} -type f -name "*.proto"; done)
 
 mkdir -p ${OUT_DIR}
 

@@ -1,5 +1,5 @@
 // Auto-generated, see scripts/codegen.js!
 
-// Exports we want to provide at the root of the "cosmjs-types" package
+// Exports we want to provide at the root of the "@gnolang/gno-types" package
 
-export * from "./vm.js";
+export * as vm from "./vm.js";
