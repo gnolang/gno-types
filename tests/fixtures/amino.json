@@ -1,0 +1,215 @@
+{
+  "gno": "67147511a259616f9b3077935511c0ef7b83b706",
+  "fixtures": [
+    {
+      "name": "MsgCall",
+      "typeUrl": "/vm.m_call",
+      "amino": "CihnMXY4MDl0dzNuM3podmZsMGthbjd4YW11eWQ3YzBydmY3ZnRqZmtrEgkxMDAwdWdub3QaCTUwMDB1Z25vdCIVZ25vLmxhbmQvci9kZW1vL2hlbGxvKgZSZW5kZXIyADIHcGF0aC90bw==",
+      "json": {
+        "caller": "g1v809tw3n3zhvfl0kan7xamuyd7c0rvf7ftjfkk",
+        "send": "1000ugnot",
+        "max_deposit": "5000ugnot",
+        "pkg_path": "gno.land/r/demo/hello",
+        "func": "Render",
+        "args": [
+          "",
+          "path/to"
+        ]
+      }
+    },
+    {
+      "name": "MsgAddPackage",
+      "typeUrl": "/vm.m_addpkg",
+      "amino": "CihnMWgzNGxtcHl3aDR1cG5qZGc5MGNqZjRqNzBhZWU2ejhxcHF4djNjEqoBCgVoZWxsbxIVZ25vLmxhbmQvci9kZW1vL2hlbGxvGjwKC2dub21vZC50b21sEi1tb2R1bGUgPSAiZ25vLmxhbmQvci9kZW1vL2hlbGxvIgpnbm8gPSAiMC45IgoaTAoJaGVsbG8uZ25vEj9wYWNrYWdlIGhlbGxvCgpmdW5jIFJlbmRlcihfIHN0cmluZykgc3RyaW5nIHsgcmV0dXJuICJoZWxsbyIgfQoaBjF1Z25vdCIIMTAwdWdub3Q=",
+      "json": {
+        "creator": "g1h34lmpywh4upnjdg90cjf4j70aee6z8qpqxv3c",
+        "package": {
+          "name": "hello",
+          "path": "gno.land/r/demo/hello",
+          "files": [
+            {
+              "name": "gnomod.toml",
+              "body": "module = \"gno.land/r/demo/hello\"\ngno = \"0.9\"\n"
+            },
+            {
+              "name": "hello.gno",
+              "body": "package hello\n\nfunc Render(_ string) string { return \"hello\" }\n"
+            }
+          ]
+        },
+        "send": "1ugnot",
+        "max_deposit": "100ugnot"
+      }
+    },
+    {
+      "name": "MsgRun",
+      "typeUrl": "/vm.m_run",
+      "amino": "CihnMXY4MDl0dzNuM3podmZsMGthbjd4YW11eWQ3YzBydmY3ZnRqZmtrEgY3dWdub3QiWgoEbWFpbhIXZ25vLmxhbmQvZS9nMWNhbGxlci9ydW4aOQoIbWFpbi5nbm8SLXBhY2thZ2UgbWFpbgoKZnVuYyBtYWluKCkgeyBwcmludGxuKCJydW4iKSB9Cg==",
+      "json": {
+        "caller": "g1v809tw3n3zhvfl0kan7xamuyd7c0rvf7ftjfkk",
+        "send": "7ugnot",
+        "max_deposit": "",
+        "package": {
+          "name": "main",
+          "path": "gno.land/e/g1caller/run",
+          "files": [
+            {
+              "name": "main.gno",
+              "body": "package main\n\nfunc main() { println(\"run\") }\n"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "MsgEnablePackage",
+      "typeUrl": "/vm.m_enable_pkg",
+      "amino": "CihnMTBncHJtYTRsOXlleW04cGQ2dnFnZGh5MmVnMnFxMjA5c2FwMjMzEhVnbm8ubGFuZC9yL2RlbW8vaGVsbG8aQGU0OGQxY2Y2NThjODgyODI0NzZkODJhMWViYjFiMDEwYzVhMGIwYzhjNjcwNzg5NTRhNmZkN2M0ZTg2YmZjZjIgnJYD",
+      "json": {
+        "approver": "g10gprma4l9yeym8pd6vqgdhy2eg2qq209sap233",
+        "pkg_path": "gno.land/r/demo/hello",
+        "pkg_hash": "e48d1cf658c88282476d82a1ebb1b010c5a0b0c8c67078954a6fd7c4e86bfcf2",
+        "pkg_height": "25998"
+      }
+    },
+    {
+      "name": "MsgEnablePackage (negative height)",
+      "typeUrl": "/vm.m_enable_pkg",
+      "amino": "CihnMTBncHJtYTRsOXlleW04cGQ2dnFnZGh5MmVnMnFxMjA5c2FwMjMzEhVnbm8ubGFuZC9yL2RlbW8vaGVsbG8gUw==",
+      "json": {
+        "approver": "g10gprma4l9yeym8pd6vqgdhy2eg2qq209sap233",
+        "pkg_path": "gno.land/r/demo/hello",
+        "pkg_hash": "",
+        "pkg_height": "-42"
+      }
+    },
+    {
+      "name": "MsgRejectPackage",
+      "typeUrl": "/vm.m_reject_pkg",
+      "amino": "CihnMXBnbThoeWswcHZwaG1sdmZqYzh3c3ZrNGRhbHV6NXRnZ2xmdXV1Ehhnbm8ubGFuZC9yL2RlbW8vcmVqZWN0ZWQ=",
+      "json": {
+        "sender": "g1pgm8hyk0pvphmlvfjc8wsvk4daluz5tgglfuuu",
+        "pkg_path": "gno.land/r/demo/rejected"
+      }
+    },
+    {
+      "name": "MsgSend",
+      "typeUrl": "/bank.MsgSend",
+      "amino": "CihnMXdremg1M3Zmbnh6bXVuemRqczBmcGQ0bmptdHZqMmp2ZWo1eTd6EihnMXZjbDJyMGxsdTVwYzcwY3Y3ZW5sem56ejJsaGwydHRoZDNyaHZwGgc0MnVnbm90",
+      "json": {
+        "from_address": "g1wkzh53vfnxzmunzdjs0fpd4njmtvj2jvej5y7z",
+        "to_address": "g1vcl2r0llu5pc70cv7enlznzz2lhl2tthd3rhvp",
+        "amount": "42ugnot"
+      }
+    },
+    {
+      "name": "MsgCreateSession",
+      "typeUrl": "/auth.m_create_session",
+      "amino": "CihnMWgzNGxtcHl3aDR1cG5qZGc5MGNqZjRqNzBhZWU2ejhxcHF4djNjEjoKEy90bS5QdWJLZXlTZWNwMjU2azESIwohAtoA6EQbXBMzBYDZiC+WsCtM6iWk2aoaVvNkwKsTnMKiGIDuiasNIh12bS9leGVjOmduby5sYW5kL3IvZGVtby9oZWxsbyoMMTAwMDAwMHVnbm90MIDGCg==",
+      "json": {
+        "creator": "g1h34lmpywh4upnjdg90cjf4j70aee6z8qpqxv3c",
+        "session_key": {
+          "@type": "/tm.PubKeySecp256k1",
+          "value": "AtoA6EQbXBMzBYDZiC+WsCtM6iWk2aoaVvNkwKsTnMKi"
+        },
+        "expires_at": "1790000000",
+        "allow_paths": [
+          "vm/exec:gno.land/r/demo/hello"
+        ],
+        "spend_limit": "1000000ugnot",
+        "spend_period": "86400"
+      }
+    },
+    {
+      "name": "MsgRevokeSession",
+      "typeUrl": "/auth.m_revoke_session",
+      "amino": "CihnMWgzNGxtcHl3aDR1cG5qZGc5MGNqZjRqNzBhZWU2ejhxcHF4djNjEjoKEy90bS5QdWJLZXlTZWNwMjU2azESIwohAtoA6EQbXBMzBYDZiC+WsCtM6iWk2aoaVvNkwKsTnMKi",
+      "json": {
+        "creator": "g1h34lmpywh4upnjdg90cjf4j70aee6z8qpqxv3c",
+        "session_key": {
+          "@type": "/tm.PubKeySecp256k1",
+          "value": "AtoA6EQbXBMzBYDZiC+WsCtM6iWk2aoaVvNkwKsTnMKi"
+        }
+      }
+    },
+    {
+      "name": "MsgRevokeAllSessions",
+      "typeUrl": "/auth.m_revoke_all_sessions",
+      "amino": "CihnMWgzNGxtcHl3aDR1cG5qZGc5MGNqZjRqNzBhZWU2ejhxcHF4djNj",
+      "json": {
+        "creator": "g1h34lmpywh4upnjdg90cjf4j70aee6z8qpqxv3c"
+      }
+    },
+    {
+      "name": "Tx",
+      "typeUrl": "/std.Tx",
+      "amino": "CngKCi92bS5tX2NhbGwSagooZzF2ODA5dHczbjN6aHZmbDBrYW43eGFtdXlkN2MwcnZmN2Z0amZraxIJMTAwMHVnbm90Ggk1MDAwdWdub3QiFWduby5sYW5kL3IvZGVtby9oZWxsbyoGUmVuZGVyMgAyB3BhdGgvdG8KbgoNL2JhbmsuTXNnU2VuZBJdCihnMXdremg1M3Zmbnh6bXVuemRqczBmcGQ0bmptdHZqMmp2ZWo1eTd6EihnMXZjbDJyMGxsdTVwYzcwY3Y3ZW5sem56ejJsaGwydHRoZDNyaHZwGgc0MnVnbm90EhMIgJL0ARIMMTAwMDAwMHVnbm90GqgBCjoKEy90bS5QdWJLZXlTZWNwMjU2azESIwohAuer9SezCYT8HnXOB9aOuYgFvwVQb4xnRTCZRyR0VDNiEkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGihnMXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcWx1dXhlGmsKOgoTL3RtLlB1YktleVNlY3AyNTZrMRIjCiEC2gDoRBtcEzMFgNmIL5awK0zqJaTZqhpW82TAqxOcwqISAwECAxooZzE4dWEwcm04dGg1MnBwMjZwMG1xZHk3YWxlZHduZ3JzaHhhaDZydCIRZ25vLXR5cGVzIGZpeHR1cmU=",
+      "json": {
+        "msg": [
+          {
+            "@type": "/vm.m_call",
+            "caller": "g1v809tw3n3zhvfl0kan7xamuyd7c0rvf7ftjfkk",
+            "send": "1000ugnot",
+            "max_deposit": "5000ugnot",
+            "pkg_path": "gno.land/r/demo/hello",
+            "func": "Render",
+            "args": [
+              "",
+              "path/to"
+            ]
+          },
+          {
+            "@type": "/bank.MsgSend",
+            "from_address": "g1wkzh53vfnxzmunzdjs0fpd4njmtvj2jvej5y7z",
+            "to_address": "g1vcl2r0llu5pc70cv7enlznzz2lhl2tthd3rhvp",
+            "amount": "42ugnot"
+          }
+        ],
+        "fee": {
+          "gas_wanted": "2000000",
+          "gas_fee": "1000000ugnot"
+        },
+        "signatures": [
+          {
+            "pub_key": {
+              "@type": "/tm.PubKeySecp256k1",
+              "value": "Auer9SezCYT8HnXOB9aOuYgFvwVQb4xnRTCZRyR0VDNi"
+            },
+            "signature": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+          },
+          {
+            "pub_key": {
+              "@type": "/tm.PubKeySecp256k1",
+              "value": "AtoA6EQbXBMzBYDZiC+WsCtM6iWk2aoaVvNkwKsTnMKi"
+            },
+            "signature": "AQID",
+            "session_addr": "g18ua0rm8th52pp26p0mqdy7aledwngrshxah6rt"
+          }
+        ],
+        "memo": "gno-types fixture"
+      }
+    },
+    {
+      "name": "PubKeyMultisig",
+      "typeUrl": "/tm.PubKeyMultisig",
+      "amino": "CAISOgoTL3RtLlB1YktleVNlY3AyNTZrMRIjCiEDGMtlvCy26S1LhUr73w/l4hkPpH3GqpFrq7UwUOj7jc4SOgoTL3RtLlB1YktleVNlY3AyNTZrMRIjCiEDL5wW78CxdKsYFKiibpeS5VkVTvDCKbO1YAbIeuJtkUYSOgoTL3RtLlB1YktleVNlY3AyNTZrMRIjCiEC0blowJ/ddzOJPU9ah3Dyk4Y1gPi8PMC3vHbQdrkY5YI=",
+      "json": {
+        "threshold": "2",
+        "pubkeys": [
+          {
+            "@type": "/tm.PubKeySecp256k1",
+            "value": "AxjLZbwstuktS4VK+98P5eIZD6R9xqqRa6u1MFDo+43O"
+          },
+          {
+            "@type": "/tm.PubKeySecp256k1",
+            "value": "Ay+cFu/AsXSrGBSoom6XkuVZFU7wwimztWAGyHribZFG"
+          },
+          {
+            "@type": "/tm.PubKeySecp256k1",
+            "value": "AtG5aMCf3XcziT1PWodw8pOGNYD4vDzAt7x20Ha5GOWC"
+          }
+        ]
+      }
+    }
+  ]
+}

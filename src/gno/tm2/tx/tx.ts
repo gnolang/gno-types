@@ -35,7 +35,10 @@ export interface TxSignature {
     | undefined;
   /** the signature */
   signature: Uint8Array;
-  /** session account address (empty for master-key signatures) */
+  /**
+   * session account address; for master-key signatures this is empty or,
+   * as gno's amino encodes it, the zero address g1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqluuxe
+   */
   sessionAddr: string;
 }
 

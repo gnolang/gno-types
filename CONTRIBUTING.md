@@ -8,7 +8,16 @@ Thanks for your interest in contributing! This document covers the bits that are
 pnpm install
 pnpm build
 pnpm lint
+pnpm test
 ```
+
+The workflow in `.github/workflows/main.yaml` runs the linter, the build and the tests on every pull request and push to `main`.
+
+## Tests
+
+`tests/amino.test.ts` checks wire compatibility with gno: `tests/fixtures/amino.json` holds messages encoded by gno's own amino codec, and the tests decode them, compare the result against gno's amino JSON, and re-encode them byte for byte. `tests/exports.test.ts` round-trips every exported message codec.
+
+When syncing protos with a newer gno, regenerate the fixtures from that gno checkout (the command is at the top of `tests/fixtures/generate/main.go`) and extend the generator with any new messages.
 
 ## Regenerating types
 
@@ -92,5 +101,5 @@ Versions `1.0.0` through `1.0.8` predate this workflow and were released manuall
 ## Pull requests
 
 - Keep PRs focused — one logical change per PR.
-- Run `pnpm lint` and `pnpm build` before pushing.
+- Run `pnpm lint`, `pnpm build` and `pnpm test` before pushing.
 - Include a changeset (see above) unless your change does not affect published output.
