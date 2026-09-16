@@ -1,6 +1,6 @@
 // Auto-generated, see scripts/codegen.js!
 
-// Exports we want to provide at the root of the "cosmjs-types" package
+// Exports we want to provide at the root of the "@gnolang/gno-types" package
 
-export * from "./api/index.js";
-export * from "./protobuf/index.js";
+export * as api from "./api/index.js";
+export * as protobuf from "./protobuf/index.js";
