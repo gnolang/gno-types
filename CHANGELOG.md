@@ -1,5 +1,15 @@
 # @gnolang/gno-types
 
+## 1.1.1
+
+### Patch Changes
+
+- [#12](https://github.com/gnolang/gno-types/pull/12) [`c31e9a5`](https://github.com/gnolang/gno-types/commit/c31e9a5f5f63a3a49c4d36982d1d4e4c0511f192) Thanks [@clockworkgr](https://github.com/clockworkgr)! - Ship a `prepare` script that points git at this repository's hooks, so a commit touching `protos/` regenerates `src/` and stages it. It only affects checkouts of this repository: `scripts/` is not part of the published tarball, npm does not run `prepare` for registry installs, and the script no-ops outside a git work tree.
+
+- [#12](https://github.com/gnolang/gno-types/pull/12) [`c31e9a5`](https://github.com/gnolang/gno-types/commit/c31e9a5f5f63a3a49c4d36982d1d4e4c0511f192) Thanks [@clockworkgr](https://github.com/clockworkgr)! - Update the toolchain that produces the published output: TypeScript 6.0.3, ts-proto 2.12.4, `@bufbuild/protobuf` 2.15.0, eslint 10.11.0, typescript-eslint 8.70.0 and `@types/node` 26.6.2.
+  
+  ts-proto generates the sources under `src/` and TypeScript compiles `dist/`, so both are rebuilt with this change. Verified against the previous versions: `pnpm codegen` reproduces `src/` byte for byte, and `dist/` is identical file for file.
+
 ## 1.1.0
 
 ### Minor Changes
