@@ -42,7 +42,7 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
-    "prepare": "node scripts/install-hooks.mjs",
+    "prepare": "node scripts/install-hooks.mjs || exit 0",
     "codegen": "rimraf ./src && ./scripts/generate.sh && ./scripts/addIndices.js && pnpm run lint:fix",
     "changeset": "changeset",
     "changeset:status": "changeset status",
