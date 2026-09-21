@@ -1,6 +1,6 @@
 {
   "name": "@gnolang/gno-types",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "JS and TS types relating to proto-compatible amino encoding used by gno",
   "contributors": [
     "Alex M.<alex.megalokonomos@tendermint.com>",
