@@ -11,6 +11,8 @@ pnpm lint
 pnpm test
 ```
 
+`pnpm install` also installs the git hooks in `.githooks/` (see [Regenerating types](#regenerating-types)).
+
 The workflow in `.github/workflows/main.yaml` runs the linter, the build and the tests on every pull request and push to `main`.
 
 ## Tests
@@ -27,7 +29,11 @@ The TypeScript sources under `src/` are generated from the `.proto` files under 
 pnpm codegen
 ```
 
-This requires `protoc` to be installed and available on your `PATH`.
+This requires `protoc` to be installed and available on your `PATH`, at the version pinned in `.github/workflows/codegen.yaml` (currently 33.4). protoc's version is written into every generated file's banner and it supplies the well-known types under `google/protobuf/`, so a different protoc rewrites `src/` even when no proto changed. Upgrading it is a deliberate change that regenerates the sources along with it.
+
+You rarely need to run this by hand: `pnpm install` points `core.hooksPath` at `.githooks/` (see `scripts/install-hooks.mjs`), and the `pre-commit` hook regenerates `src/` and stages the result whenever a commit touches `protos/`, `scripts/generate.sh` or `scripts/addIndices.js`. Commits that touch nothing else skip it, so they pay no cost. Use `git commit --no-verify` to bypass it for one commit — but regenerate before opening a pull request, because CI checks it.
+
+The `Codegen` job in `.github/workflows/main.yaml` regenerates the sources with the pinned protoc and fails if the result differs from what is committed, so generated code cannot drift from the protos it came from even if the hook was never installed.
 
 Only the protos under the `ROOTS` listed in `scripts/generate.sh` (`gno`, `ibc`, `tendermint`, `tm`) are generated; `ts-proto` also emits every proto they import. The other directories under `protos/` (`cosmos`, `gogoproto`, `google`, ...) hold just those dependencies, so when adding a proto, copy in only the files it imports.
 
